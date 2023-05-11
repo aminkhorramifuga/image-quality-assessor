@@ -1,0 +1,5 @@
+The standard deviation of pixel intensities is a very basic measure of contrast, and might not give good results for all images. For example, an image with a single bright spot and a lot of darkness will have a high standard deviation, but might not have high contrast in the usual sense.
+
+One way to improve this contrast calculation is to use a local contrast method. This involves dividing the image into smaller regions, and calculating the contrast in each of these regions. The final contrast measure could then be the average or median of these regional contrasts, or some other statistic. This can give a better measure of contrast for images with varying light conditions.
+
+Another way to improve the contrast calculation is to use a different color space. We're currently using grayscale, but this ignores color information that might be important for contrast. For example, an image with different colors might appear to have high contrast even if the brightness is the same across the image. By converting the image to a different color space, like HSV or Lab, we can take this color information into account.

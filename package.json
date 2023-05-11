@@ -1,0 +1,17 @@
+{
+  "name": "image-quality-assessor",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminkhorramifuga/image-quality-assessor.git"
+  },
+  "author": "amin.khorrami@fuga.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aminkhorramifuga/image-quality-assessor/issues"
+  },
+  "homepage": "https://github.com/aminkhorramifuga/image-quality-assessor#readme"
+}
