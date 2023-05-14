@@ -6,3 +6,6 @@ __pycache__/
 
 # Ignore virtual environment
 env/
+
+# Ignore image dataset
+imagenet-object-localization-challenge.zip

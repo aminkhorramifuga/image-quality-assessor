@@ -1,7 +1,27 @@
-Sharpness: This measures how clear and detailed an image is. It can be calculated in many ways, but one common method is to use the Laplacian variance. High variance indicates high sharpness.
+Resolution: The image should be of high resolution and not pixelated or blurry. Lower resolution images often look unprofessional and could be off-putting to listeners.
 
-Saturation: This measures the intensity of colors in an image. It can be calculated by converting the image to the HSV color space and calculating the standard deviation of the S (saturation) channel.
+width, height = image.size
+resolution = width * height
 
-Noise: This measures the amount of random variation in an image. It can be calculated by subtracting a smoothed version of the image from the original image, and calculating the standard deviation of the result.
+Brightness and Contrast: The image should have a balanced brightness and contrast to ensure that all elements in the image are clearly visible and not washed out or too dark.
 
-Composition: This involves more complex aspects of the image like the rule of thirds, depth of field, etc. These can be harder to calculate algorithmically, but might be possible with advanced machine learning techniques.
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+brightness = np.mean(gray_image)
+contrast = np.std(gray_image)
+
+Color Balance: The colors used in the image should be well balanced and harmonious.
+
+mean_b, mean_g, mean_r = np.mean(image, axis=(0, 1))
+std_b, std_g, std_r = np.std(image, axis=(0, 1))
+
+Noise Level: The image should not have too much noise (random variations of brightness or color information).
+
+blurred = cv2.GaussianBlur(image, (5, 5), 0)
+noise = np.std(image - blurred)
+
+Composition: The arrangement of elements within a scene. Good composition can make an image more compelling or easier to understand.
+
+Sharpness: The clarity of detail in an image.
+
+laplacian = cv2.Laplacian(image, cv2.CV_64F)
+sharpness = np.var(laplacian)
